@@ -1,14 +1,3 @@
 class User < ApplicationRecord
-  has_many :posts
-  has_many :comments
-  has_many :likes
-
-  def recent_posts
-    posts.order(created_at: :desc).limit(3)
-  end
-
-  def update_posts_count
-    self.posts_counter = posts.count
-    save
-  end
+    has_many :posts
 end
