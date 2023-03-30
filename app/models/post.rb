@@ -6,6 +6,7 @@ class Post < ApplicationRecord
     # Validations
     validates :title, presence: true, length: { maximum: 250 }, format: { with: /\A[a-zA-Z0-9 ]+\z/ }
     validates :comments_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0, allow_nil: true }
+    validates :likes_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0, allow_nil: true }
 
   def recent_comments
     comments.order(created_at: :desc).limit(5)
