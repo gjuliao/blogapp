@@ -8,6 +8,8 @@ class Post < ApplicationRecord
     too_long: '250 characters is the maximum allowed'
   }
 
+  validates :comments_counter, numericality: { greater_than_or_equal_to: 0 }
+
   def recent_comments
     comments.order(created_at: :desc).limit(5)
   end
