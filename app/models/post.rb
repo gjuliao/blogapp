@@ -3,7 +3,10 @@ class Post < ApplicationRecord
   has_many :comments
   has_many :likes
 
-  validates :title, presence: true
+  validates :title, presence: true, length: {
+    maximum: 250,
+    too_long: '250 characters is the maximum allowed'
+  }
 
   def recent_comments
     comments.order(created_at: :desc).limit(5)
