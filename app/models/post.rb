@@ -12,8 +12,8 @@ class Post < ApplicationRecord
     author.order(created_at: :desc).limit(5)
   end
 
-  def update_comments_count
-    self.comments_counter = comments.count
+  def update_user_posts_count
+    author.posts_counter = posts.count
     save
   end
 end
