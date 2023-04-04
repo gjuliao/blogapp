@@ -13,6 +13,10 @@ RSpec.describe 'Posts', type: :request do
     it 'should render the index template' do
       expect(response).to render_template(:index)
     end
+
+    it 'include text of Find me in app' do
+      expect(response.body).to include('Find me in app')
+    end
   end
 
   describe 'GET /show' do
