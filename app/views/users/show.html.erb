@@ -1,2 +1,7 @@
 <p>This is the show page</p>
 <%= @user.name %>
+<%= @user.bio %>
+<% @user.recent_posts.each do |post| %>
+<%= post.title %>
+<%= post.text %>
+<% end %>
