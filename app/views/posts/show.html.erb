@@ -1,2 +1,24 @@
 <h1>Posts#show</h1>
 <p>Find me in app/views/posts/show.html.erb</p>
+
+<div class="card">
+    <h4>Post No: <%= @post.id  %></h4>
+    <h4>Post by: <%= @post.author.name  %></h4>
+    <h4>Number of comments: <%= @comments.count  %></h4>
+    <h4>Number of Likes: <%= @post.likes_counter  %></h4>
+    <p> <%= @post.text  %></p>
+
+    <div class="card">
+    <% comments = @post.recent_comments%>
+     <% comments.each do |comment| %>
+        <div class="card mb-4 col-sm-4 mx-auto">
+          <h4 class="card-title">
+             <%= comment.author.name %>
+          </h4>
+          <p class="card-body">
+             <%= comment.text %>
+          </p>
+        </div>
+    <% end %>
+    </div>
+</div>
