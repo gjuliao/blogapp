@@ -1,1 +1,4 @@
-<p>Here could be all the users</p>
+<h1>Names of all the Users</h1>
+<% @users.each do |user| %>
+Name: <%= user.name %>
+<% end %>
