@@ -1,7 +1,15 @@
 <h1>Names of all the Users</h1>
+
 <% @users.each do |user| %>
-<div>
-Name: <%= link_to user.name, user_path(user) %>
-Count: <%= user.posts_counter %>
-</div>
+    <div class="card col-sm-6 mb-4 mx-auto">
+        <div class="card-header">
+        <%= link_to user.name, user_path(user) %>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">POST COUNT:</h5>
+            <p class="card-text">Check my posts here:</p>
+            <a href="#" class="btn btn-primary"><%= user.posts_counter %></a>
+        </div>
+    </div>
 <% end %>
+
