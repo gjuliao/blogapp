@@ -14,7 +14,7 @@
     <% comments = post.recent_comments%>
     <div class="card col-sm-8 mb-4 mx-auto">
         <div class="card-header d-flex">
-           <%= link_to post.title  %>  ## user_post_path(post[0].author, post
+           <%= link_to post.title, user_post_path(@user, post)  %>
         </div>
         <div class="card-body">
             <p class="card-title d-flex justify-content-end">
