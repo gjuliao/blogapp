@@ -11,6 +11,7 @@
     </div>
 
     <% @posts.each do |post| %>
+    <% comments = post.recent_comments%>
     <div class="card col-sm-8 mb-4 mx-auto">
         <div class="card-header d-flex">
             <%= link_to post.title %>
@@ -27,7 +28,19 @@
                 <p class="px-5">Likes:
                     <%= post.likes_counter %>
                 </p>
-            </div>
+        </div>
+    </div>
+    <div>
+    <% comments.each do |comment| %>
+        <div class="card mb-4 col-sm-4 mx-auto">
+          <h4 class="card-title">
+             <%= comment.author.name %>
+          </h4>
+          <p class="card-body">
+             <%= comment.text %>
+          </p>
+        </div>
+    <% end %>
     </div>
         <% end %>
 
