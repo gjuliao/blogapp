@@ -1,28 +1,39 @@
 <div>
     <div class="card col-sm-8 mb-4 mx-auto">
         <div class="card-header d-flex">
-            <%= @user.photo %>
-            <%= @user.name %>
-        </div>
-        <div class="card-body">
-            <h5 class="card-title d-flex justify-content-end">POST COUNT:
+          <img style="width:135px; height:130px" src="<%= @user.photo %>" />
+          <h5 class="mx-5 mt-5"><%= @user.name %>
+            <p class="position-absolute end-0 mx-4">POST COUNT:
             <%= @user.posts_counter %>
-            </h5>
-        </div>
+            </p>
+    </div>
+        
     </div>
 
     <% @posts.each do |post| %>
     <div class="card col-sm-8 mb-4 mx-auto">
         <div class="card-header d-flex">
-            <%= post.title %>
+            <%= link_to post.title %>
         </div>
         <div class="card-body">
             <p class="card-title d-flex justify-content-end">
             <%= post.text %>
             </p>
         </div>
+        <div class="d-flex justify-content-end">
+                <p>Comments:
+                    <%= post.comments_counter  %>
+                </p>
+                <p class="px-5">Likes:
+                    <%= post.likes_counter %>
+                </p>
+            </div>
     </div>
         <% end %>
+
+    <div class="d-grid gap-2">
+        <%= link_to 'Pagination', user_posts_path(@user), class: "mx-auto btn btn-primary mb-5 btn-lg" %>
+    </div>
 </div>
 
 

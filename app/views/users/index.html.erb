@@ -3,7 +3,7 @@
 <% @users.each do |user| %>
     <div class="card col-sm-8 mb-4 mx-auto">
         <div class="card-header d-flex">
-            <%= user.photo %>
+         <img style="width:75px; height:80px" class="img-thumbnail" src="<%= user.photo %>" />
             <%= link_to user.name, user_path(user) %>
         </div>
         <div class="card-body">

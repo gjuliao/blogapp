@@ -1,8 +1,11 @@
 <div>
     <div class="card col-sm-6 mb-4 mx-auto">
         <div class="card-header">
-            <h5><%= @user.name %></h5>
-            <p class="card-title d-flex justify-content-end">Post count:
+            <div class="d-flex">
+                <img style="width:135px; height:130px" class="d-flex justify-content-end" src="<%= @user.photo %>" />
+                <h5 class="mx-5 pt-5"><%= @user.name %></h5>
+            </div>
+            <p class="card-title d-flex justify-content-end top-0">Post count:
                 <%= @user.posts_counter %>
             </p>
         </div>
