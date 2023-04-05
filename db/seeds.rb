@@ -7,10 +7,10 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 # Users
-first_user = User.create(name: 'Gustavo', photo: 'https://img.freepik.com/premium-photo/fun-3d-cartoon-yellow-character_183364-17615.jpg', bio: 'John Smith is a senior credit analyst at ABC Bank with over a decade of experience in risk analysis for banks and other lending institutions. He holds a Bachelor of Science degree in business administration from the State University of California. Smith is credited with creating a unit in ABC Bank to counteract cyber fraud in the credit department.')
-second_user = User.create(name: 'Tom', photo: 'https://img.freepik.com/free-photo/3d-rendering-zoom-call-avatar_23-2149556783.jpg?w=740&t=st=1675977075~exp=1675977675~hmac=c9146e8131dd1f51cb7ea7290c9589348eadb77dce82b04da98f67090d1c9934', bio: 'He is the organizer of the Annual Credit Risk Trends conference in New York, which brings together professionals from across the United States to discuss credit risk analysis, using technology to manage risk, and how banks can better position themselves to deal with emerging credit risk issues.')
-third_user = User.create(name: 'Lilly', photo: 'https://img.freepik.com/free-photo/3d-rendering-zoom-call-avatar_23-2149556780.jpg?w=740&t=st=1675976926~exp=1675977526~hmac=94dcb44bac83e594df6c9324c2d75e3f34a2b786843734624bfc19a3c5ec8b7d', bio: 'At work, Smith developed an internal stress management guide to help employees manage stress and work pressure effectively. During the weekend, he likes to go hunting with his dog Bingo or preparing grilled delicacies in his backyard.')
-fourth_user = User.create(name: 'Ariel', photo: 'https://img.freepik.com/free-photo/3d-rendering-zoom-call-avatar_23-2149556785.jpg?w=740&t=st=1675976814~exp=1675977414~hmac=50d182a4fa4f210bc23ebf26046a69abd1ea8e770ec61fdb49b283c9d795dee2', bio: 'When writing a professional bio, it is not mandatory to include personal details, such as hobbies, personal history, favorite TV shows, and unique interests. However, including personal details can help paint you as a well-rounded person and will more likely allow your audience to establish a more personal connection with you.')
+first_user = User.create(name: 'Loriza', photo: 'https://picsum.photos/200/300', bio: 'John Smith is a senior credit analyst at ABC Bank with over a decade of experience in risk analysis for banks and other lending institutions. He holds a Bachelor of Science degree in business administration from the State University of California. Smith is credited with creating a unit in ABC Bank to counteract cyber fraud in the credit department.')
+second_user = User.create(name: 'Tom', photo: 'https://picsum.photos/200/300', bio: 'He is the organizer of the Annual Credit Risk Trends conference in New York, which brings together professionals from across the United States to discuss credit risk analysis, using technology to manage risk, and how banks can better position themselves to deal with emerging credit risk issues.')
+third_user = User.create(name: 'Lilly', photo: 'https://picsum.photos/200/300', bio: 'At work, Smith developed an internal stress management guide to help employees manage stress and work pressure effectively. During the weekend, he likes to go hunting with his dog Bingo or preparing grilled delicacies in his backyard.')
+fourth_user = User.create(name: 'Ariel', photo: 'https://picsum.photos/200/300', bio: 'When writing a professional bio, it is not mandatory to include personal details, such as hobbies, personal history, favorite TV shows, and unique interests. However, including personal details can help paint you as a well-rounded person and will more likely allow your audience to establish a more personal connection with you.')
 
 # Posts
 first_post = Post.create(author: first_user, title: 'What is Lorem Ipsum', text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum')
@@ -27,7 +27,7 @@ eleventh_post = Post.create(author: fourth_user, title: 'Lorem 2', text: 'Vivamu
 
 # Comments
 first_comment = Comment.create(post: first_post, author: first_user, text: 'This is my first comment')
-second_comment = Comment.create(post: first_post, author: second_user, text: 'This is my second comment' )
+second_comment = Comment.create(post: first_post, author: second_user, text: 'This is my second comment')
 third_comment = Comment.create(post: first_post, author: third_user, text: 'This is my third comment')
 fourth_comment = Comment.create(post: first_post, author: fourth_user, text: 'This is my fourth comment')
 fifth_comment = Comment.create(post: first_post, author: first_user, text: 'This is my fifth comment')
@@ -100,9 +100,6 @@ sixty_first_comment = Comment.create(post: eleventh_post, author: first_user, te
 sixty_second_comment = Comment.create(post: eleventh_post, author: second_user, text: 'This is my sixty-second comment')
 sixty_third_comment = Comment.create(post: eleventh_post, author: third_user, text: 'This is my sixty-third comment')
 sixty_fourth_comment = Comment.create(post: eleventh_post, author: fourth_user, text: 'This is my sixty-fourth comment')
-
-
-
 
 # Likes
 first_like = Like.create(post: first_post, author: first_user)
