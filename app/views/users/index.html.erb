@@ -2,8 +2,9 @@
 
 <% @users.each do |user| %>
     <div class="card col-sm-8 mb-4 mx-auto">
-        <div class="card-header">
-        <%= link_to user.name, user_path(user) %>
+        <div class="card-header d-flex">
+            <%= user.photo %>
+            <%= link_to user.name, user_path(user) %>
         </div>
         <div class="card-body">
             <h5 class="card-title d-flex justify-content-end">POST COUNT:
