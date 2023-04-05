@@ -6,9 +6,9 @@
         <%= link_to user.name, user_path(user) %>
         </div>
         <div class="card-body">
-            <h5 class="card-title">POST COUNT:</h5>
-            <p class="card-text">Check my posts here:</p>
-            <a href="#" class="btn btn-primary"><%= user.posts_counter %></a>
+            <h5 class="card-title d-flex justify-content-end">POST COUNT:
+            <%= user.posts_counter %>
+            </h5>
         </div>
     </div>
 <% end %>

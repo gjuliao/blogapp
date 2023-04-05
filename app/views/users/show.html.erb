@@ -1,7 +1,32 @@
 <p>This is the show page</p>
-<%= @user.name %>
-<%= @user.bio %>
-<% @user.recent_posts.each do |post| %>
-<%= post.title %>
-<%= post.text %>
+
+    <div class="card col-sm-6 mb-4 mx-auto">
+        <div class="card-header">
+        <h5>
+        <%= @user.name %>
+        </h5>
+        <p class="card-title d-flex justify-content-end">Post count:
+            <%= @user.posts_counter %>
+        </p>
+        </div>
+        <div class="card-body">
+            <h4 class="pb-4">Biography:</h4>
+            <p>
+            <%= @user.bio %>
+            </p>
+        </div>
+    </div>
+
+    <% @user.recent_posts.each do |post| %>
+
+      <div class="card col-sm-6 mb-4 mx-auto">
+        <div class="card-header">
+        <%= post.title %>
+        </div>
+        <div class="card-body">
+            <p>
+            <%= post.text %>
+            </p>
+        </div>
+    </div>
 <% end %>
