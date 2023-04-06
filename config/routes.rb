@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: 'users#index'
   # Defines the root path route ("/")
   resources :users, only: [:index, :show, :new, :create] do
-    resources :posts, only: [:index, :show, :new, :create]
+    resources :posts, only: [:index, :show, :new, :create] do
+      resources :comments, only: [:new]
+    end
   end
 end

@@ -1,4 +1,4 @@
- <%= bootstrap_form_with model: @posts, local: true do |f|%>
+ <%= bootstrap_form_with model: @post, url: user_posts_path, method: :post, local: true do |f|%>
 
   <%= f.text_field :title %>
   <%= f.text_area :text %>
