@@ -44,9 +44,9 @@ RSpec.describe 'Posts', type: :request do
         expect(response).to have_http_status(:success)
       end
 
-      it 'Post should render post text details' do
+      it 'Post should render post title details' do
         get "/users/#{user.id}/posts/#{post.id}"
-        expect(response.body).to include('This is my first post')
+        expect(response.body).to include('Mathematician student.')
       end
 
       it 'Should render the show template' do

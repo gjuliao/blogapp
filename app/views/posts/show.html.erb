@@ -5,6 +5,8 @@
     <h4>Number of Likes: <%= @post.likes.count  %></h4>
     <p> <%= @post.text  %></p>
 
+    <%= link_to 'Add Comment', new_user_post_comment_path(@user, @post) %>
+
     <div class="card">
     <% comments = @post.recent_comments%>
      <% comments.each do |comment| %>
