@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comments = @post.comments
+    render :show
   end
 
   def new
@@ -14,12 +15,22 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params[:post])
-    @post.user_id = current_user.id if current_user
-    if @post.after_save
+    @post = Post.new(post_params)
+    @post.author = ApplicationController.current_user
+    @post.comments_counter = 0
+    @post.likes_counter = 0
+    if @post.save
       flash[:success] = 'Post created successfully'
+      redirect_to user_posts_path(ApplicationController.current_user)
     else
+      flash[:error] = 'Error: Post could not be saved'
       render 'new'
     end
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :text)
   end
 end
