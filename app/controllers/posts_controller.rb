@@ -9,7 +9,17 @@ class PostsController < ApplicationController
     @comments = @post.comments
   end
 
-  def new; end
+  def new
+    @post = Post.new
+  end
 
-  def create; end
+  def create
+    @post = Post.new(params[:post])
+    @post.user_id = current_user.id if current_user
+    if @post.after_save
+      flash[:success] = 'Post created successfully'
+    else
+      render 'new'
+    end
+  end
 end
