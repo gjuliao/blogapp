@@ -1,0 +1,8 @@
+ <%= bootstrap_form_with model: @post, local: true do |f|%>
+
+  <%= f.text_field :title %>
+  <%= f.text_area :text %>
+  <%= f.text_area :bio %>
+  <%= f.submit %>
+
+<% end %>
