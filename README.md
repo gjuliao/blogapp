@@ -38,7 +38,10 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Ruby On Rails App**
+- **Users can create posts**
+- **Users can create comments**
+- **Full stack app**
+- **Styling uses bootstrap**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
