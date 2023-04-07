@@ -38,7 +38,10 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Ruby On Rails App**
+- **Users can create posts**
+- **Users can create comments**
+- **Full stack app**
+- **Styling uses bootstrap**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -101,6 +104,16 @@ For tracking linter errors in Ruby files run:
 
 - GitHub: [@gjuliao](https://github.com/gjuliao)
 - LinkedIn: [giovanni-juliao](https://www.linkedin.com/in/giovanni-juliao/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- **Add more styling**
+- **Add devise**
+- **Register User**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

@@ -1,12 +1,16 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
-
 <div class="card">
     <h4>Post No: <%= @post.id  %></h4>
     <h4>Post by: <%= @post.author.name  %></h4>
     <h4>Number of comments: <%= @comments.count  %></h4>
-    <h4>Number of Likes: <%= @post.likes_counter  %></h4>
+    <h4>Number of Likes: <%= @post.likes.count  %></h4>
     <p> <%= @post.text  %></p>
+    
+    <div>
+      <%= link_to 'Add Comment', new_user_post_comment_path(@user, @post) %>
+       <%= form_with model: Like.new, url: user_post_likes_path(@user, @post) do |form| %>
+         <% form.submit :Like,  class:"btn btn-primary"%>
+       <% end %>
+    </div>
 
     <div class="card">
     <% comments = @post.recent_comments%>

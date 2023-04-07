@@ -4,7 +4,7 @@
           <img style="width:135px; height:130px" src="<%= @user.photo %>" />
           <h5 class="mx-5 mt-5"><%= @user.name %>
             <p class="position-absolute end-0 mx-4">POST COUNT:
-            <%= @user.posts_counter %>
+            <%= @user.posts.count %>
             </p>
     </div>
         
@@ -23,10 +23,10 @@
         </div>
         <div class="d-flex justify-content-end">
                 <p>Comments:
-                    <%= post.comments_counter  %>
+                    <%= post.comments.count  %>
                 </p>
                 <p class="px-5">Likes:
-                    <%= post.likes_counter %>
+                    <%= post.likes.count %>
                 </p>
         </div>
     </div>
