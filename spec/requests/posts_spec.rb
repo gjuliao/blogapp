@@ -8,7 +8,7 @@ RSpec.describe 'Posts', type: :request do
       user = User.create(name: 'Frank', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
              bio: 'Mathematician student.', posts_counter: 0)
       post = Post.create(title: 'Frank Paper', text: 'This is my first post', comments_counter: 0,
-             likes_counter: 0, author_id: user)
+             likes_counter: 0, author: user)
 
       it 'renders a succesful response' do
         get "/users/#{user.id}/posts"
@@ -37,7 +37,7 @@ RSpec.describe 'Posts', type: :request do
       user = User.create(name: 'Frank', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
              bio: 'Mathematician student.', posts_counter: 0)
       post = Post.create(title: 'Frank Paper', text: 'This is my first post', comments_counter: 0,
-             likes_counter: 0, author_id: user)
+             likes_counter: 0, author: user)
 
       it 'returns http success' do
         get "/users/#{user.id}/posts/#{post.id}"
@@ -46,7 +46,7 @@ RSpec.describe 'Posts', type: :request do
 
       it 'Post should render post title details' do
         get "/users/#{user.id}/posts/#{post.id}"
-        expect(response.body).to include('Mathematician student.')
+        expect(response.body).to include('This is my first post')
       end
 
       it 'Should render the show template' do
