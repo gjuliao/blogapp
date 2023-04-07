@@ -1,2 +1,6 @@
-<h1>Comment#new</h1>
-<p>Find me in app/views/comment/new.html.erb</p>
+<div class="card mb-5">
+    <h4><%= @user.name %></h4>
+    <h2><%= @post.title %></h2>
+    <p><%= @post.text %></p>
+</div>
+<%= render 'partials/comment_form' %>
