@@ -23,7 +23,7 @@ RSpec.describe 'Users', type: :request do
   describe 'GET /show' do
     context 'Render posts' do
       user = User.create(name: 'Frank', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-             bio: 'Mathematician student.', posts_counter: 0)
+                         bio: 'Mathematician student.', posts_counter: 0)
 
       it 'returns http success' do
         get "/users/#{user.id}"

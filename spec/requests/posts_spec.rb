@@ -1,14 +1,10 @@
-# rubocop:disable Layout/HashAlignment, Layout/ArgumentAlignment
-
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
   describe 'GET /index' do
     context 'testing render posts' do
       user = User.create(name: 'Frank', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-             bio: 'Mathematician student.', posts_counter: 0)
-      post = Post.create(title: 'Frank Paper', text: 'This is my first post', comments_counter: 0,
-             likes_counter: 0, author: user)
+                         bio: 'Mathematician student.', posts_counter: 0)
 
       it 'renders a succesful response' do
         get "/users/#{user.id}/posts"
@@ -35,9 +31,9 @@ RSpec.describe 'Posts', type: :request do
   describe 'GET /show' do
     context 'Render posts' do
       user = User.create(name: 'Frank', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-             bio: 'Mathematician student.', posts_counter: 0)
+                         bio: 'Mathematician student.', posts_counter: 0)
       post = Post.create(title: 'Frank Paper', text: 'This is my first post', comments_counter: 0,
-             likes_counter: 0, author: user)
+                         likes_counter: 0, author: user)
 
       it 'returns http success' do
         get "/users/#{user.id}/posts/#{post.id}"
