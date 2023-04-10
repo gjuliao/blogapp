@@ -40,4 +40,29 @@ RSpec.describe 'users/show.html.erb', type: :feature do
   before(:each) do
     visit user_path(user)
   end
+
+  it 'Renders the profile pic of user' do
+    expect(page).to have_xpath("//img[@src = '#{user.photo}']")
+  end
+
+  it 'Shows user name' do
+    expect(page).to have_text(user.name)
+  end
+
+  it 'Can show the posts of a user' do
+    expect(page).to have_content(/posts/i)
+  end
+
+  it 'Can see user bio' do
+    expect(page).to have_text(user.bio)
+  end
+
+  it 'Can see button with text See All Posts' do
+    expect(page).to have_text(/See All Posts/i)
+  end
+
+  it 'Click See All posts, redirects to a all posts of that user' do
+    click_on 'See all Posts'
+    expect(page).to have_current_path(user_post_path(user, post))
+  end
 end
