@@ -62,7 +62,7 @@ RSpec.describe 'users/show.html.erb', type: :feature do
   end
 
   it 'Click See All posts, redirects to a all posts of that user' do
-    click_on 'See all Posts'
-    expect(page).to have_current_path(user_post_path(user, post))
+    click_on 'See All Posts'
+    expect(page).to have_current_path(user_posts_path(user))
   end
 end
