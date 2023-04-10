@@ -38,4 +38,15 @@ RSpec.describe 'users/index.html.erb', type: :feature do
     expect(page).to have_text(/POST COUNT: #{user1.posts.count}/i)
   end
 
+  it 'Shows the pictures of users' do
+    visit '/'
+    expect(page).to have_xpath("//img[@src = '#{user1.photo}']")
+  end
+
+  it 'Clicking on user, redirects to user show page' do
+    visit '/'
+    click_on user1.name
+    expect(page).to have_current_path(user_path(user1))
+  end
+
 end
