@@ -1,4 +1,3 @@
-# rubocop:disable Lint/Syntax
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
@@ -58,8 +57,8 @@ RSpec.describe Post, type: :model do
   context 'Increments with variables' do
     let(:author) { User.create(name: 'Naming Convention One', photo: 'https://images.unsplash.com/photo-1651684215020-f7a5b6610f23?&fit=crop&w=640', bio: 'A skilled carpenter with over 15 years of experience, specializing in custom furniture design and installation.') }
     let(:user) { User.create(name: 'Naming Two', photo: 'https://images.unsplash.com/photo-1530268729831-4b0b9e170218?&fit=crop&w=640', bio: 'A licensed therapist with expertise in cognitive-behavioral therapy and trauma-informed care.', posts_counter: 5) }
-  
-    let(:post) { Post.create(title: 'First Post', text: 'First Content', author: ) }
+
+    let(:post) { Post.create(title: 'First Post', text: 'First Content', author: author) }
     it 'increment post counter after creating new post' do
       expect(user.posts_counter).to eq(5)
     end

@@ -23,7 +23,7 @@
         <div class="card col-sm-6 mb-4 mx-auto">
             <div class="card-header">
             <p>Post number: <%= post.id %></p>
-            <h5><%= post.title %></h5>
+            <h5><%= link_to post.title, user_post_path(@user, post) %></h5>
             </div>
             <div class="card-body">
                 <p>
