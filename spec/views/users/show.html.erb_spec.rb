@@ -66,6 +66,12 @@ RSpec.describe 'users/show.html.erb', type: :feature do
     expect(page).to have_current_path(user_posts_path(user))
   end
 
+  it 'Redirects when clicking on a post' do
+    visit user_posts_path(user)
+    click_on post1.title
+    expect(page).to have_current_path(user_post_path(user, post1))
+  end
+
   it 'shows the three posts of each user' do
     expect(page).to_not have_content(post1.text)
     expect(page).to have_content(post2.text)
