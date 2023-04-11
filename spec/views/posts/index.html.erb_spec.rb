@@ -92,6 +92,10 @@ RSpec.describe 'posts/index.html.erb', type: :feature do
     expect(page).to have_content('Comments: 1')
   end
 
+  it 'Checking for 1st comment in post' do
+    expect(page).to have_content(post3.comments.first.text)
+  end
+
   it 'Checking for likes in post' do
     expect(page).to have_content('Likes: 1')
   end
