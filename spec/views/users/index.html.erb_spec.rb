@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'users/index.html.erb', type: :feature do
   let!(:user1) do
     User.create(
-      name: 'Prangon',
+      name: 'Giovanni',
       photo: 'https://www.bing.com/th?id=ODL.c83b34c2350e6cd3a1010f7d1998cfa8&w=143&h=198&c=12&rs=1&qlt=99&pcl=faf9f7&o=6&pid=13.1',
       bio: 'Web Dev'
     )
