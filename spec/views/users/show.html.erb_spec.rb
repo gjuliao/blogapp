@@ -65,4 +65,11 @@ RSpec.describe 'users/show.html.erb', type: :feature do
     click_on 'See All Posts'
     expect(page).to have_current_path(user_posts_path(user))
   end
+
+  it 'shows the three posts of each user' do
+    expect(page).to_not have_content(post1.text)
+    expect(page).to have_content(post2.text)
+    expect(page).to have_content(post3.text)
+    expect(page).to have_content(post3.text)
+  end
 end
