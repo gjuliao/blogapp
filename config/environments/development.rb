@@ -17,6 +17,19 @@ Rails.application.configure do
   # Enable server timing
   config.server_timing = true
 
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.office365.com',
+    port:                 587,
+    user_name:            'gio_microverse@hotmail.com',
+    password:             'Microverse1!',
+    authentication:       'login',
+    enable_starttls_auto: true
+  }
+
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
   if Rails.root.join("tmp/caching-dev.txt").exist?
