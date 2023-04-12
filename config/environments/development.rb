@@ -24,7 +24,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address:              'smtp.office365.com',
     port:                 587,
-    user_name:            'gio_microverse@outlook.com',
+    user_name:            'gio_microverse@hotmail.com',
     password:             'Microverse1!',
     authentication:       'login',
     enable_starttls_auto: true
