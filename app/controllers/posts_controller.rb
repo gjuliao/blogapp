@@ -30,6 +30,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post.destroy
+    redirect_to user_posts_path, notice: 'Post was successfully destroyed.'
+  end
+
   private
 
   def post_params
