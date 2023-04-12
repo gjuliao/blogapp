@@ -8,12 +8,12 @@ class CommentsController < ApplicationController
     @user = User.find(params[:user_id])
     @post = Post.find(params[:post_id])
     @comment = Comment.new(comment_params)
-    @comment.author = ApplicationController.current_user
+    @comment.author = current_user
     @comment.post = @user.posts.find(params['post_id'])
 
     if @comment.save
       flash[:success] = 'Comment created successfully'
-      redirect_to user_posts_path(ApplicationController.current_user, @post)
+      redirect_to user_posts_path(current_user, @post)
     else
       flash[:error] = 'Error: Comment could not be saved'
       render 'new'
