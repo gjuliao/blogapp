@@ -22,6 +22,9 @@
             </p>
         </div>
         <div class="d-flex justify-content-end">
+                 <p>Delete Post:
+                    <%= button_to 'Delete Post', user_post_path(@user, post), method: :delete   %>
+                </p>
                 <p>Comments:
                     <%= post.comments.count  %>
                 </p>

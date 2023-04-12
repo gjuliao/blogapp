@@ -25,8 +25,9 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
     authorize! :destroy, @comment
-    # @post.comments_counter -= 1
-    @post.destroy
+    @post.comments_counter -= 1
+    @comment.destroy
+    @post.save
     redirect_to user_post_path(@user, @post)
   end
 

@@ -36,7 +36,7 @@ class PostsController < ApplicationController
     authorize! :destroy, @post
     @user.posts_counter -= 1
     @post.destroy
-    redirect_to user_posts_path(current_user)
+    redirect_to user_posts_path(@user)
   end
 
   private
