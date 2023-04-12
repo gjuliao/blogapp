@@ -7,7 +7,7 @@
         <%= link_to 'Home', root_path, class:"nav-link active" %>
         </li>
         <li class="nav-item">
-        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class:"nav-link active" %>
+        <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class:"nav-link active" %>
         </li>
       </ul>
     </div>
