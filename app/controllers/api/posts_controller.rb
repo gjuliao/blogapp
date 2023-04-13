@@ -1,5 +1,4 @@
 class Api::PostsController < Api::ApplicationController
-
   def index
     @posts = Post.where(author_id: params[:user_id])
     if @posts
