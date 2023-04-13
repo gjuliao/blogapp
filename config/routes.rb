@@ -16,4 +16,14 @@ Rails.application.routes.draw do
   get "/users/:user_id/posts/:id", to: "posts#show"
   post "/users/:user_id/posts/new", to: "posts#create"
   delete '/users/:user_id/posts/:id', to: 'posts#destroy'
+
+    #API routes
+    namespace :api do
+      post 'login', to: 'login#index'
+      resources :users, only: [] do
+        resources :posts, only: [:index] do
+          resources :comments, only: [:create, :index]
+        end
+      end
+    end
 end
