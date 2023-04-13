@@ -1,10 +1,10 @@
 class Api::CommentsController < Api::ApplicationController
   def index
-    @post = Post.find(params[:post_id])
-    if @post
-      render json: { status: 'ok', data: @post.comments }
+    @comments = Post.find(params[:post_id]).comments
+    if @comments
+      render json: { status: 'ok', data: @comments }
     else
-      render json: { status: 'Error', error: 'Post Not Found' }
+      render json: { status: 'Error', error: 'No Comments Found' }
     end
   end
 
@@ -17,8 +17,6 @@ class Api::CommentsController < Api::ApplicationController
     @user = User.find(params[:user_id])
     @post = Post.find(params[:post_id])
     @comment = Comment.new(comment_params)
-    @comment.author = current_user
-    @comment.post = @user.posts.find(params['post_id'])
 
     if @user && @post
       if @comment.save
