@@ -2,7 +2,11 @@ class Api::CommentsController < Api::ApplicationController
 
     def index
       @post = Post.find(params[:post_id])
-      render json: { status: 'ok', data: @post.comments }
+      if @post
+        render json: { status: 'ok', data: @post.comments }
+      else
+        render json: { status: 'Error', error: 'Post Not Found' }
+      end
     end
 
     def new
