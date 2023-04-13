@@ -105,6 +105,11 @@ For tracking linter errors in Ruby files run:
 - GitHub: [@gjuliao](https://github.com/gjuliao)
 - LinkedIn: [giovanni-juliao](https://www.linkedin.com/in/giovanni-juliao/)
 
+👤 **Prangon Ghose**
+
+- GitHub: [@PrangonGhose](https://github.com/PrangonGhose)
+- LinkedIn: [Prangon Ghose](https://www.linkedin.com/in/prangon-ghose/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->

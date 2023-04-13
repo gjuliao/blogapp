@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   delete '/users/sign_out', to: 'devise/sessions#destroy'
   # Defines the root path route ("/")
   resources :users, only: [:index, :show, :new, :create] do
-    resources :posts, only: [:index, :show, :new, :create] do
+    resources :posts, only: [:index, :show, :new, :create, :destroy] do
       resources :comments, :likes
     end
   end
@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   get "/users/:user_id/posts/new", to: "posts#new"
   get "/users/:user_id/posts/:id", to: "posts#show"
   post "/users/:user_id/posts/new", to: "posts#create"
+  delete '/users/:user_id/posts/:id', to: 'posts#destroy'
 end
