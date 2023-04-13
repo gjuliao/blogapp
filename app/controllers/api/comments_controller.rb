@@ -20,10 +20,14 @@ class Api::CommentsController < Api::ApplicationController
     @comment.author = current_user
     @comment.post = @user.posts.find(params['post_id'])
 
-    if @comment.save
-      render json: { status: :created, data: @comment }
+    if @user && @post
+      if @comment.save
+        render json: { status: :created, data: @comment }
+      else
+        render json: { error: @comment.errors, status: :unprocessable_entity }
+      end
     else
-      render json: { error: @comment.errors, status: :unprocessable_entity }
+      render json: { status: 'Error', error: 'User && Post Not Found' }
     end
   end
 
