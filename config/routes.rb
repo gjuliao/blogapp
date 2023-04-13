@@ -19,9 +19,8 @@ Rails.application.routes.draw do
 
     #API routes
     namespace :api do
-      post 'login', to: 'login#index'
       resources :users, only: [] do
-        resources :posts, only: [:index] do
+        resources :posts, only: [:create, :index] do
           resources :comments, only: [:create, :index]
         end
       end

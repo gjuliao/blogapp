@@ -1,4 +1,4 @@
-class Api::CommentsController < ApplicationController
+class Api::CommentsController < Api::ApplicationController
 
     def index
       @post = Post.find(params[:post_id])

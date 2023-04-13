@@ -1,10 +1,14 @@
-class Api::PostsController < ApplicationController
+class Api::PostsController < Api::ApplicationController
     load_and_authorize_resource
   
     def index
       @user = User.find(params[:user_id])
       @posts = @user.posts.includes(:comments, :likes)
-      render json: @posts
+      if @user
+        render json: @posts
+      else
+        render json: { status: 'Error', error: 'User Not Found' }
+      end
     end
   
     def show
