@@ -13,7 +13,7 @@ class Api::PostsController < Api::ApplicationController
     @post = Post.where(id: params[:id])
     render json: @post
   end
-  
+
   private
 
   def post_params
