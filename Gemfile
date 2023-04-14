@@ -33,6 +33,7 @@ gem 'rubocop', '~> 1.48', require: false
 gem 'bootstrap', '~> 5.0'
 gem 'bootstrap_form', '~> 5.1'
 gem 'cancancan'
+gem 'rswag'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
